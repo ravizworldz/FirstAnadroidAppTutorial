@@ -18,20 +18,16 @@ class MainActivity : AppCompatActivity() {
             val password = passwordInput.text.toString()
 
             if(TextUtils.isEmpty(username)){
-                //inline errow
                 usernameInput.setError("Please enter username")
-
             } else if(TextUtils.isEmpty(password)) {
                 passwordInput.setError("Please enter password")
-
             } else {
-                val intent = Intent(this, SecondActivity::class.java)
 
-                intent.putExtra("username", username)
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("user", username)
                 intent.putExtra("password", password)
 
                 startActivity(intent)
-
                 finish()
             }
         }
